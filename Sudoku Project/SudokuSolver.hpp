@@ -22,6 +22,10 @@ public:
     SudokuSolver(SudokuPuzzle& puzzle) : puzzle(puzzle), emptyCells(puzzle.emptyCells) {
         this->N = (int) puzzle.emptyCells.size();
     }
+
+    ~SudokuSolver() {
+        printf("Destructor invoked: Sudoku is Solved\n");
+    }
     SudokuPuzzle solve();
 private:
     bool backtrack(vector<vector<int>>& vvi, int index);

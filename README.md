@@ -24,3 +24,5 @@ To run and test the solver:
 - struct
 - namespace and the scope operator `::`
 - assert command
+- Smart Pointer
+  - `std::unique_ptr<T>` and `std::make_unique<T>()`

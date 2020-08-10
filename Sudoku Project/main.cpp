@@ -30,9 +30,10 @@ int main(int argc, const char * argv[]) {
     };
 
     SudokuPuzzle puzzle("Normal Sudoku", vi);
-    SudokuSolver sudoku(puzzle);
+    unique_ptr<SudokuSolver> sudoku = make_unique<SudokuSolver>(puzzle);
+    
     try {
-        SudokuPuzzle solvedPuzzle = sudoku.solve();
+        SudokuPuzzle solvedPuzzle = sudoku->solve();
         vector<vector<int>> vvi = solvedPuzzle.puzzle;
         printf("Printing Solved Puzzle:\n");
         for (int i = 0; i < 9; i++) {
